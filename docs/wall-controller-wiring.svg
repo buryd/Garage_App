@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" width="1100" height="680">
   <rect width="1100" height="680" fill="#ffffff"/>
-  <text x="24" y="36" fill="#1f2933" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700">Garage door wall controller  wiring diagram</text>
+  <text x="24" y="36" fill="#1f2933" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700">Garage door wall controller - wiring diagram</text>
   <text x="24" y="58" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="14">Each line is one wire. COM and NO are the only wires that touch the opener.</text>
 
   <rect x="24" y="78" width="230" height="46" rx="6" fill="#f5f7fa" stroke="#1f2933"/>
@@ -33,7 +33,7 @@
 
   <rect x="430" y="168" width="250" height="160" rx="6" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
   <text x="446" y="194" fill="#1f2933" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">Coil drive</text>
-  <text x="446" y="220" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="14">R1 1 k© to 2N2222 base</text>
+  <text x="446" y="220" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="14">R1 1 kï¿½ to 2N2222 base</text>
   <text x="446" y="242" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="14">Emitter to GND</text>
   <text x="446" y="264" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="14">Collector to K1 coil</text>
   <text x="446" y="286" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="14">1N4007 across the coil</text>
@@ -57,13 +57,12 @@
   <text x="692" y="210" fill="#9a3412" font-family="Segoe UI, sans-serif" font-size="12">COM</text>
   <text x="692" y="250" fill="#9a3412" font-family="Segoe UI, sans-serif" font-size="12">NO</text>
 
-  <rect x="430" y="360" width="250" height="150" rx="6" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
+  <rect x="430" y="360" width="250" height="120" rx="6" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
   <text x="446" y="386" fill="#1f2933" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">VL53L1X</text>
   <text x="446" y="412" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="14">VIN from 3V3</text>
   <text x="446" y="434" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="14">GND to ESP32 GND</text>
   <text x="446" y="456" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="14">SDA from GPIO21</text>
   <text x="446" y="478" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="14">SCL from GPIO22</text>
-  <text x="446" y="498" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="13">Aim at the door panel</text>
 
   <line x1="254" y1="360" x2="430" y2="360" stroke="#1f2933" stroke-width="2"/>
   <text x="300" y="352" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="12">3V3</text>
@@ -76,7 +75,7 @@
   <text x="776" y="494" fill="#1f2933" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">S1 shut reed</text>
   <text x="776" y="514" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="13">Other wire to GND. Closed = position 0</text>
   <line x1="254" y1="510" x2="760" y2="510" stroke="#1f2933" stroke-width="2"/>
-  <text x="470" y="502" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="12">GPIO25</text>
+  <text x="680" y="502" fill="#52606d" font-family="Segoe UI, sans-serif" font-size="12">GPIO25</text>
 
   <rect x="760" y="560" width="310" height="58" rx="6" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
   <text x="776" y="584" fill="#1f2933" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">S2 open reed</text>

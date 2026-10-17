@@ -35,7 +35,7 @@ The timers run while that service is keeping the app process alive. A hardware c
 
 The phone does not drive the motor. A wall unit next to the opener pulses the existing wall button and reports position. The opener keeps its motor and photo eyes.
 
-![Wall controller wiring diagram](docs/wall-controller-wiring.svg)
+![Wall controller wiring diagram](docs/wall-controller-wiring.png)
 
 One button contact handles every command. GPIO27 high for 400 ms closes the relay. Position decides whether that press should start or stop.
 
