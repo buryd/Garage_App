@@ -31,6 +31,29 @@ The timers run while that service is keeping the app process alive. A hardware c
 
 `SimulatedGarageController` is the stand-in. Replace it inside `DoorRepository` when a real controller can report position and accept those three commands.
 
+## Wall controller
+
+The phone does not drive the motor. A wall unit next to the opener pulses the existing wall button and reports position. The opener keeps its motor and photo eyes.
+
+One button contact handles every command. GPIO27 high for 400 ms closes the relay. Position decides whether that press should start or stop.
+
+Control wires, from the ESP32-DevKitC-32E:
+
+- 5V to the relay coil and the 1N4007 cathode
+- GND to the 2N2222 emitter
+- GPIO27 through 1 kΩ to the 2N2222 base
+- 2N2222 collector to the other coil pin
+- Relay COM to one wall-button screw
+- Relay NO to the other wall-button screw
+
+Monitor wires:
+
+- 3V3, GND, GPIO21 (SDA), and GPIO22 (SCL) to the VL53L1X
+- GPIO25 to the shut reed, return to GND; closed switch is position 0
+- GPIO26 to the open reed, return to GND; closed switch is position 1
+
+The button screws are not tied to the ESP32 ground. Do not connect this circuit to the motor, the mains, or the photo-eye terminals.
+
 ## Run
 
 Open this folder in Android Studio (current stable, with Android SDK 37) and run the **app** configuration on a phone or emulator. The first launch asks for notification permission so the background watch can post.
