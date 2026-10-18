@@ -55,6 +55,8 @@ data class WatchSettings(
     val alertAfterMinutes: Int = 10,
     val autoCloseAfterMinutes: Int = 0,
     val backgroundWatch: Boolean = true,
+    val controllerHost: String = "",
+    val controllerToken: String = "",
 )
 
 object DoorLimits {

@@ -115,6 +115,15 @@ class GarageViewModel(app: Application) : AndroidViewModel(app) {
         repository.updateSettings(repository.settings.value.copy(backgroundWatch = enabled))
     }
 
+    fun setController(host: String, token: String) {
+        repository.updateSettings(
+            repository.settings.value.copy(
+                controllerHost = host.trim(),
+                controllerToken = token.trim(),
+            ),
+        )
+    }
+
     private fun initialState(): DoorUiState {
         val snapshot = repository.snapshot.value
         val settings = repository.settings.value

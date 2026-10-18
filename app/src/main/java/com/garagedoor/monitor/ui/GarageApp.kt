@@ -48,6 +48,7 @@ fun GarageApp(
     onAlertMinutes: (Int) -> Unit,
     onAutoCloseMinutes: (Int) -> Unit,
     onBackgroundWatch: (Boolean) -> Unit,
+    onController: (String, String) -> Unit,
 ) {
     val navController = rememberNavController()
     val backStack by navController.currentBackStackEntryAsState()
@@ -101,6 +102,7 @@ fun GarageApp(
                     onAlertMinutes = onAlertMinutes,
                     onAutoCloseMinutes = onAutoCloseMinutes,
                     onBackgroundWatch = onBackgroundWatch,
+                    onController = onController,
                 )
             }
         }

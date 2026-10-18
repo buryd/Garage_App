@@ -2,7 +2,10 @@ package com.garagedoor.monitor.data
 
 import android.content.Context
 import com.garagedoor.monitor.controller.GarageController
+import com.garagedoor.monitor.controller.NetworkGarageController
 import com.garagedoor.monitor.controller.SimulatedGarageController
+import com.garagedoor.monitor.controller.SwitchingGarageController
+import com.garagedoor.monitor.controller.controllerBaseUrl
 import com.garagedoor.monitor.model.Command
 import com.garagedoor.monitor.model.DoorEvent
 import com.garagedoor.monitor.model.DoorLimits
@@ -36,10 +39,11 @@ class DoorRepository(context: Context) {
     private val gate = Mutex()
 
     private val restored = readSnapshot()
-    private val controller: GarageController = SimulatedGarageController(
+    private val simulated: GarageController = SimulatedGarageController(
         scope = scope,
         restored = restored.copy(travel = Travel.Idle),
     )
+    private val controller = SwitchingGarageController(scope, simulated)
 
     val snapshot: StateFlow<DoorSnapshot> = controller.snapshot
     private val _settings = MutableStateFlow(readSettings())
@@ -69,6 +73,7 @@ class DoorRepository(context: Context) {
         }
         scope.launch { watchTransitions() }
         scope.launch { watchTimers() }
+        applyController(readSettings())
     }
 
     fun request(command: Command, automatic: Boolean = false) {
@@ -81,12 +86,33 @@ class DoorRepository(context: Context) {
     }
 
     fun updateSettings(settings: WatchSettings) {
+        val linkChanged = settings.controllerHost != _settings.value.controllerHost ||
+            settings.controllerToken != _settings.value.controllerToken
         _settings.value = settings
         prefs.edit()
             .putInt(KEY_ALERT, settings.alertAfterMinutes)
             .putInt(KEY_AUTO, settings.autoCloseAfterMinutes)
             .putBoolean(KEY_WATCH, settings.backgroundWatch)
+            .putString(KEY_HOST, settings.controllerHost)
+            .putString(KEY_TOKEN, settings.controllerToken)
             .apply()
+        if (linkChanged) applyController(settings)
+    }
+
+    private fun applyController(settings: WatchSettings) {
+        val baseUrl = controllerBaseUrl(settings.controllerHost)
+        if (baseUrl == null) {
+            controller.use(simulated)
+            return
+        }
+        controller.use(
+            NetworkGarageController(
+                scope = scope,
+                baseUrl = baseUrl,
+                token = settings.controllerToken,
+                initial = controller.snapshot.value,
+            ),
+        )
     }
 
     private suspend fun watchTransitions() {
@@ -204,6 +230,8 @@ class DoorRepository(context: Context) {
         alertAfterMinutes = prefs.getInt(KEY_ALERT, 10),
         autoCloseAfterMinutes = prefs.getInt(KEY_AUTO, 0),
         backgroundWatch = prefs.getBoolean(KEY_WATCH, true),
+        controllerHost = prefs.getString(KEY_HOST, "").orEmpty(),
+        controllerToken = prefs.getString(KEY_TOKEN, "").orEmpty(),
     )
 
     private fun readEvents(): List<DoorEvent> {
@@ -233,6 +261,8 @@ class DoorRepository(context: Context) {
         private const val KEY_ALERT = "alert_minutes"
         private const val KEY_AUTO = "auto_close_minutes"
         private const val KEY_WATCH = "background_watch"
+        private const val KEY_HOST = "controller_host"
+        private const val KEY_TOKEN = "controller_token"
         private const val KEY_EVENTS = "events"
     }
 }

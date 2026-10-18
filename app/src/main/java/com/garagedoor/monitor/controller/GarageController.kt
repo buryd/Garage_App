@@ -23,6 +23,7 @@ import kotlinx.coroutines.sync.withLock
 interface GarageController {
     val snapshot: StateFlow<DoorSnapshot>
     fun command(command: Command)
+    fun close() {}
 }
 
 class SimulatedGarageController(

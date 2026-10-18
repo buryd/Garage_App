@@ -97,6 +97,7 @@ class MainActivity : ComponentActivity() {
                             viewModel.setBackgroundWatch(true)
                         }
                     },
+                    onController = viewModel::setController,
                 )
             }
         }

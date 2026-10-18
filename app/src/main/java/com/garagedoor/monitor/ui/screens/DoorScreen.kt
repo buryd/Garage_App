@@ -144,7 +144,11 @@ fun DoorScreen(
             )
         }
         Text(
-            text = stringResource(R.string.controller_line),
+            text = if (state.settings.controllerHost.isBlank()) {
+                stringResource(R.string.controller_line)
+            } else {
+                stringResource(R.string.controller_line_remote)
+            },
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier

@@ -50,7 +50,8 @@
     <string name="card_moving_body">You can stop the door while it moves.</string>
     <string name="card_offline_title">No controller</string>
     <string name="card_offline_body">The door position is the last one this phone recorded.</string>
-    <string name="controller_line">Controller on this phone</string>
+    <string name="controller_line">Practice door on this phone</string>
+    <string name="controller_line_remote">Wall controller</string>
 
     <string name="activity_title">Activity</string>
     <string name="activity_empty">No activity yet. Open or close the door and it will be listed here.</string>
@@ -70,7 +71,12 @@
     <string name="settings_watch">Watch in the background</string>
     <string name="settings_watch_help">Keeps a quiet notification so this phone can warn you after you leave the app.</string>
     <string name="settings_controller">Controller</string>
-    <string name="settings_controller_body">This phone is standing in for the wall controller, so the door on the main screen moves without any hardware. A real controller reports position and accepts open, close, and stop.</string>
+    <string name="settings_controller_body">Enter the wall unit\'s home address and the access code stored on that unit. Leave the address blank to use the practice door.</string>
+    <string name="settings_private_network">Away from home, this phone uses that same address through Tailscale. Install Tailscale on this phone and on a computer that stays on at home, sign in to the same account, and share the home network from that computer. The wall unit stays off the public internet.</string>
+    <string name="settings_private_network_install">Install Tailscale</string>
+    <string name="settings_controller_address">Wall unit address</string>
+    <string name="settings_controller_token">Access code</string>
+    <string name="settings_controller_save">Save wall unit</string>
     <string name="settings_safety">Closing</string>
     <string name="settings_safety_body">Every close asks you to confirm the doorway is clear. Stop is immediate while the door is moving.</string>
     <string name="off">Off</string>

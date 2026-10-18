@@ -1,5 +1,7 @@
 package com.garagedoor.monitor.ui.screens
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -12,12 +14,17 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -25,6 +32,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.garagedoor.monitor.R
@@ -40,9 +48,12 @@ fun SettingsScreen(
     onAlertMinutes: (Int) -> Unit,
     onAutoCloseMinutes: (Int) -> Unit,
     onBackgroundWatch: (Boolean) -> Unit,
+    onController: (String, String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     var pendingAutoClose by remember { mutableStateOf<Int?>(null) }
+    var host by remember(settings.controllerHost) { mutableStateOf(settings.controllerHost) }
+    var token by remember(settings.controllerToken) { mutableStateOf(settings.controllerToken) }
 
     Column(
         modifier
@@ -120,9 +131,61 @@ fun SettingsScreen(
             Spacer(Modifier.height(6.dp))
             Text(
                 text = stringResource(R.string.settings_controller_body),
-                style = MaterialTheme.typography.bodyLarge,
+                style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
+            Text(
+                text = stringResource(R.string.settings_private_network),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 8.dp),
+            )
+            val context = LocalContext.current
+            TextButton(
+                onClick = {
+                    val market = Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("market://details?id=com.tailscale.ipn"),
+                    )
+                    val opened = runCatching { context.startActivity(market) }.isSuccess
+                    if (!opened) {
+                        context.startActivity(
+                            Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse("https://play.google.com/store/apps/details?id=com.tailscale.ipn"),
+                            ),
+                        )
+                    }
+                },
+            ) {
+                Text(stringResource(R.string.settings_private_network_install))
+            }
+            OutlinedTextField(
+                value = host,
+                onValueChange = { host = it },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 12.dp),
+                singleLine = true,
+                label = { Text(stringResource(R.string.settings_controller_address)) },
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri),
+            )
+            OutlinedTextField(
+                value = token,
+                onValueChange = { token = it },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 8.dp),
+                singleLine = true,
+                label = { Text(stringResource(R.string.settings_controller_token)) },
+                visualTransformation = PasswordVisualTransformation(),
+            )
+            Button(
+                onClick = { onController(host, token) },
+                modifier = Modifier.padding(top = 12.dp),
+            ) {
+                Text(stringResource(R.string.settings_controller_save))
+            }
         }
     }
 

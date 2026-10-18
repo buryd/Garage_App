@@ -56,6 +56,10 @@ Monitor wires:
 
 The button screws are not tied to the ESP32 ground. Do not connect this circuit to the motor, the mains, or the photo-eye terminals.
 
+In Settings, enter the unit's home address (for example `192.168.1.50`) and the access code from `firmware/garage_wall/garage_wall.ino`. Leave the address blank to keep using the practice door. Do not publish port 8080 on the internet. The access code is the only lock, and it is sent only inside your home network or a private tunnel.
+
+Away from home, the phone reaches that same address through [Tailscale](https://tailscale.com/). Install Tailscale on the phone and on a computer that stays on at home, and sign both in to the same account. On the home computer, share the home network (for a `192.168.0.x` address, that is `192.168.0.0/24`) and approve that route in the Tailscale admin console. The wall unit is not given its own public address. Settings in the app has an Install Tailscale button.
+
 ## Run
 
 Open this folder in Android Studio (current stable, with Android SDK 37) and run the **app** configuration on a phone or emulator. The first launch asks for notification permission so the background watch can post.
