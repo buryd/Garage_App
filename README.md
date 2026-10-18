@@ -37,6 +37,12 @@ The phone does not drive the motor. A wall unit next to the opener pulses the ex
 
 ![Wall controller wiring diagram](docs/wall-controller-wiring.png)
 
+The ESP32 and the coil drive sit on one perfboard screwed into a project box next to the opener. The distance sensor looks out through a hole toward the door. The reed switches stay on the door: the shut switch where the door is closed, and the open switch where the door stops when fully open.
+
+![Perfboard mounted in the enclosure](docs/enclosure-perfboard.jpg)
+
+![Wall controller box next to the opener](docs/wall-controller-enclosure.jpg)
+
 One button contact handles every command. GPIO27 high for 400 ms closes the relay. Position decides whether that press should start or stop.
 
 Control wires, from the ESP32-DevKitC-32E:
