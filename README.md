@@ -92,6 +92,7 @@ Single-unit prices from the seller pages on 19 Oct 2026. Tax and shipping are ex
 | 1 | USB data cable | USB-A to Micro-USB, 3 ft. Powers and programs the ESP32. | [Adafruit 592](https://www.adafruit.com/product/592) | $2.95 | $2.95 |
 | 1 | Enclosure | 5 × 7 × 3 in weatherproof box, clear lid | [Adafruit 905](https://www.adafruit.com/product/905) | $19.95 | $19.95 |
 | 1 | Perfboard | Half-size Perma-Proto, sold as a 3-pack. Use one. | [Adafruit 571](https://www.adafruit.com/product/571) | $12.50 | $12.50 |
+|  | **Total** |  |  |  | **$66.83** |
 
 A short pair of wires from the relay to the opener's wall-button screws is not a separate catalog part.
 
@@ -100,6 +101,7 @@ A short pair of wires from the relay to the opener's wall-button screws is not a
 | Qty | Component | Buy this | Where | Each | Line |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Distance sensor | Adafruit VL53L1X breakout. Skip it and the reeds still report shut and open. | [Adafruit 3967](https://www.adafruit.com/product/3967) | $14.95 | $14.95 |
+|  | **Total** |  |  |  | **$14.95** |
 
 ### Raspberry Pi for remote access
 
@@ -108,6 +110,14 @@ A short pair of wires from the relay to the opener's wall-button screws is not a
 | 1 | Raspberry Pi 3 Model B+ | Board with built-in Ethernet. Adafruit 3775 is the same board at $54.00. | [SparkFun Raspberry Pi 3 B+](https://www.sparkfun.com/raspberry-pi-3-b.html) | $43.50 | $43.50 |
 | 1 | Pi power supply | 5 V, 2.5 A, Micro-USB cable included | [Adafruit 1995](https://www.adafruit.com/product/1995) | $8.25 | $8.25 |
 | 1 | microSD card | 32 GB Class 10, blank. SparkFun warns this memory price is unstable. | [SparkFun COM-19041](https://www.sparkfun.com/microsd-card-32gb-class-10.html) | $34.95 | $34.95 |
+|  | **Total** |  |  |  | **$86.70** |
+
+| What you buy | Total |
+| --- | --- |
+| Wall unit | $66.83 |
+| Wall unit and distance sensor | $81.78 |
+| Wall unit and Raspberry Pi | $153.53 |
+| Wall unit, distance sensor, and Raspberry Pi | **$168.48** |
 
 Also use a short Ethernet cable from the Pi to the home router. Tailscale's personal plan has no charge. Digi-Key's 2N2222A single-unit price is $0.18. Its UK page shows the same part at £0.14. The 32 GB card at $34.95 is a shortage listing; a plain 32 GB Class 10 card from another shop is the same part for this Pi.
 
