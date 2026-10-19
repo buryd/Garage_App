@@ -43,6 +43,12 @@ The ESP32 and the coil drive sit on one perfboard screwed into a project box nex
 
 ![Wall controller box next to the opener](docs/wall-controller-enclosure.jpg)
 
+Screw the box to the opener's hanging bracket, the perforated strap between the ceiling joist and the motor. The sensor hole faces the closed door. Leave the door and its rail alone.
+
+![Enclosure aimed at the door](docs/enclosure-aimed-at-door.jpg)
+
+![Where to mount the enclosure](docs/enclosure-mount.jpg)
+
 One button contact handles every command. GPIO27 high for 400 ms closes the relay. Position decides whether that press should start or stop.
 
 Control wires, from the ESP32-DevKitC-32E:
