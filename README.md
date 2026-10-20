@@ -80,44 +80,44 @@ Single-unit prices from the seller pages on 19 Oct 2026. Tax and shipping are ex
 
 ### Wall unit
 
-|  | Qty | Component | Buy this | Where | Each | Line |
+| &emsp;&emsp;&emsp;&emsp; | Qty | Component | Buy this | Where | Each | Line |
 | --- | --- | --- | --- | --- | --- | --- |
-| - [ ] | 1 | Controller board | ESP32-DEVKITC-32E | [Digi-Key 1965-ESP32-DEVKITC-32E-ND](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32E/12091810) | $10.00 | $10.00 |
-| - [ ] | 2 | Reed switch and magnet | Adafruit 375, normally open | [Adafruit 375](https://www.adafruit.com/product/375) | $3.95 | $7.90 |
-| - [ ] | 1 | Relay | TE ORWH-SH-105D1F,000, 5 V coil | [Digi-Key PB2032-ND](https://www.digikey.com/en/products/result?keywords=PB2032-ND) | $3.61 | $3.61 |
-| - [ ] | 1 | Transistor | 2N2222A, TO-92 | [Digi-Key 4878-2N2222ACT-ND](https://www.digikey.com/en/products/result?keywords=4878-2N2222ACT-ND) | $0.18 | $0.18 |
-| - [ ] | 1 | Resistor | 1 kΩ, 1/4 W, 5% | [Digi-Key CF14JT1K00CT-ND](https://www.digikey.com/en/products/detail/stackpole-electronics-inc/CF14JT1K00/1741314) | $0.10 | $0.10 |
-| - [ ] | 1 | Diode | 1N4007 | [Digi-Key 4878-1N4007CT-ND](https://www.digikey.com/en/products/result?keywords=4878-1N4007CT-ND) | $0.14 | $0.14 |
-| - [ ] | 1 | 5 V, 2 A supply | USB-A wall charger. Adafruit 1994 is $7.95 and out of stock. | [SparkFun USB Wall Charger](https://www.sparkfun.com/usb-wall-charger-5v-2a.html) | $9.50 | $9.50 |
-| - [ ] | 1 | USB data cable | USB-A to Micro-USB, 3 ft. Powers and programs the ESP32. | [Adafruit 592](https://www.adafruit.com/product/592) | $2.95 | $2.95 |
-| - [ ] | 1 | Enclosure | 5 × 7 × 3 in weatherproof box, clear lid | [Adafruit 905](https://www.adafruit.com/product/905) | $19.95 | $19.95 |
-| - [ ] | 1 | Perfboard | Half-size Perma-Proto, sold as a 3-pack. Use one. | [Adafruit 571](https://www.adafruit.com/product/571) | $12.50 | $12.50 |
+| -&nbsp;[&nbsp;] | 1 | Controller board | ESP32-DEVKITC-32E | [Digi-Key 1965-ESP32-DEVKITC-32E-ND](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32E/12091810) | $10.00 | $10.00 |
+| -&nbsp;[&nbsp;] | 2 | Reed switch and magnet | Adafruit 375, normally open | [Adafruit 375](https://www.adafruit.com/product/375) | $3.95 | $7.90 |
+| -&nbsp;[&nbsp;] | 1 | Relay | TE ORWH-SH-105D1F,000, 5 V coil | [Digi-Key PB2032-ND](https://www.digikey.com/en/products/result?keywords=PB2032-ND) | $3.61 | $3.61 |
+| -&nbsp;[&nbsp;] | 1 | Transistor | 2N2222A, TO-92 | [Digi-Key 4878-2N2222ACT-ND](https://www.digikey.com/en/products/result?keywords=4878-2N2222ACT-ND) | $0.18 | $0.18 |
+| -&nbsp;[&nbsp;] | 1 | Resistor | 1 kΩ, 1/4 W, 5% | [Digi-Key CF14JT1K00CT-ND](https://www.digikey.com/en/products/detail/stackpole-electronics-inc/CF14JT1K00/1741314) | $0.10 | $0.10 |
+| -&nbsp;[&nbsp;] | 1 | Diode | 1N4007 | [Digi-Key 4878-1N4007CT-ND](https://www.digikey.com/en/products/result?keywords=4878-1N4007CT-ND) | $0.14 | $0.14 |
+| -&nbsp;[&nbsp;] | 1 | 5 V, 2 A supply | USB-A wall charger. Adafruit 1994 is $7.95 and out of stock. | [SparkFun USB Wall Charger](https://www.sparkfun.com/usb-wall-charger-5v-2a.html) | $9.50 | $9.50 |
+| -&nbsp;[&nbsp;] | 1 | USB data cable | USB-A to Micro-USB, 3 ft. Powers and programs the ESP32. | [Adafruit 592](https://www.adafruit.com/product/592) | $2.95 | $2.95 |
+| -&nbsp;[&nbsp;] | 1 | Enclosure | 5 × 7 × 3 in weatherproof box, clear lid | [Adafruit 905](https://www.adafruit.com/product/905) | $19.95 | $19.95 |
+| -&nbsp;[&nbsp;] | 1 | Perfboard | Half-size Perma-Proto, sold as a 3-pack. Use one. | [Adafruit 571](https://www.adafruit.com/product/571) | $12.50 | $12.50 |
 |  |  | **Total** |  |  |  | **$66.83** |
 
 A short pair of wires from the relay to the opener's wall-button screws is not a separate catalog part.
 
 ### Optional distance sensor
 
-|  | Qty | Component | Buy this | Where | Each | Line |
+| &emsp;&emsp;&emsp;&emsp; | Qty | Component | Buy this | Where | Each | Line |
 | --- | --- | --- | --- | --- | --- | --- |
-| - [ ] | 1 | Distance sensor | Adafruit VL53L1X breakout. Skip it and the reeds still report shut and open. | [Adafruit 3967](https://www.adafruit.com/product/3967) | $14.95 | $14.95 |
+| -&nbsp;[&nbsp;] | 1 | Distance sensor | Adafruit VL53L1X breakout. Skip it and the reeds still report shut and open. | [Adafruit 3967](https://www.adafruit.com/product/3967) | $14.95 | $14.95 |
 |  |  | **Total** |  |  |  | **$14.95** |
 
 ### Raspberry Pi for remote access
 
-|  | Qty | Component | Buy this | Where | Each | Line |
+| &emsp;&emsp;&emsp;&emsp; | Qty | Component | Buy this | Where | Each | Line |
 | --- | --- | --- | --- | --- | --- | --- |
-| - [ ] | 1 | Raspberry Pi 3 Model B+ | Board with built-in Ethernet. Adafruit 3775 is the same board at $54.00. | [SparkFun Raspberry Pi 3 B+](https://www.sparkfun.com/raspberry-pi-3-b.html) | $43.50 | $43.50 |
-| - [ ] | 1 | Pi power supply | 5 V, 2.5 A, Micro-USB cable included | [Adafruit 1995](https://www.adafruit.com/product/1995) | $8.25 | $8.25 |
-| - [ ] | 1 | microSD card | 32 GB Class 10, blank. SparkFun warns this memory price is unstable. | [SparkFun COM-19041](https://www.sparkfun.com/microsd-card-32gb-class-10.html) | $34.95 | $34.95 |
+| -&nbsp;[&nbsp;] | 1 | Raspberry Pi 3 Model B+ | Board with built-in Ethernet. Adafruit 3775 is the same board at $54.00. | [SparkFun Raspberry Pi 3 B+](https://www.sparkfun.com/raspberry-pi-3-b.html) | $43.50 | $43.50 |
+| -&nbsp;[&nbsp;] | 1 | Pi power supply | 5 V, 2.5 A, Micro-USB cable included | [Adafruit 1995](https://www.adafruit.com/product/1995) | $8.25 | $8.25 |
+| -&nbsp;[&nbsp;] | 1 | microSD card | 32 GB Class 10, blank. SparkFun warns this memory price is unstable. | [SparkFun COM-19041](https://www.sparkfun.com/microsd-card-32gb-class-10.html) | $34.95 | $34.95 |
 |  |  | **Total** |  |  |  | **$86.70** |
 
-|  | What you buy | Total |
+| &emsp;&emsp;&emsp;&emsp; | What you buy | Total |
 | --- | --- | --- |
-| - [ ] | Wall unit | $66.83 |
-| - [ ] | Wall unit and distance sensor | $81.78 |
-| - [ ] | Wall unit and Raspberry Pi | $153.53 |
-| - [ ] | Wall unit, distance sensor, and Raspberry Pi | **$168.48** |
+| -&nbsp;[&nbsp;] | Wall unit | $66.83 |
+| -&nbsp;[&nbsp;] | Wall unit and distance sensor | $81.78 |
+| -&nbsp;[&nbsp;] | Wall unit and Raspberry Pi | $153.53 |
+| -&nbsp;[&nbsp;] | Wall unit, distance sensor, and Raspberry Pi | **$168.48** |
 
 Also use a short Ethernet cable from the Pi to the home router. Tailscale's personal plan has no charge. Digi-Key's 2N2222A single-unit price is $0.18. Its UK page shows the same part at £0.14. The 32 GB card at $34.95 is a shortage listing; a plain 32 GB Class 10 card from another shop is the same part for this Pi.
 
