@@ -37,7 +37,9 @@ The phone does not drive the motor. A wall unit next to the opener pulses the ex
 
 ![Wall controller wiring diagram](docs/wall-controller-wiring.png)
 
-The ESP32 and the coil drive sit on one perfboard screwed into a project box next to the opener. The distance sensor looks out through a hole toward the door. The reed switches stay on the door: the shut switch where the door is closed, and the open switch where the door stops when fully open.
+The ESP32 and the coil drive sit on one perfboard screwed into a project box next to the opener. The distance sensor looks out through a hole toward the door. The magnet rides on the door. The shut switch is fixed where the door is closed, and the open switch is fixed on the horizontal track where the door stops when fully open. In that position the two faces sit about 1/2 inch (13 mm) apart.
+
+![Magnet facing its reed switch](docs/reed-switch-magnet.jpg)
 
 ![Perfboard mounted in the enclosure](docs/enclosure-perfboard.jpg)
 
